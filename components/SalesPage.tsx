@@ -95,20 +95,20 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-800 pb-12">
       
-      {/* Header Banner - Static (Not Fixed) */}
-      <div className="w-full bg-red-600 text-white py-3 px-2 shadow-md text-center leading-tight">
-          <p className="text-xs md:text-sm font-semibold">
-            Você acabou de receber 70% de desconto que expira em : <span className="text-yellow-300 font-bold text-base">{formatTime(timeLeft)}</span>
+      {/* Header Banner - Static (Scrolls with page, does not stay at top of screen) */}
+      <div className="w-full bg-red-600 text-white py-2 px-2 shadow-sm text-center leading-tight">
+          <p className="text-[10px] md:text-xs font-semibold">
+            Você acabou de receber 70% de desconto que expira em : <span className="text-yellow-300 font-bold text-sm">{formatTime(timeLeft)}</span>
           </p>
       </div>
 
-      {/* Social Proof Popup - Smaller */}
-      <div className={`fixed top-4 right-4 z-50 bg-white p-2 rounded shadow-lg border-l-2 border-green-500 max-w-[180px] transition-all duration-500 transform ${popup.show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+      {/* Social Proof Popup - Even Smaller */}
+      <div className={`fixed top-4 right-4 z-50 bg-white p-2 rounded-lg shadow-xl border-l-2 border-green-500 max-w-[160px] transition-all duration-500 transform ${popup.show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
           <div className="flex items-center gap-2">
-              <div className="bg-green-100 p-1 rounded-full flex-shrink-0"><Check size={10} className="text-green-600" /></div>
+              <div className="bg-green-100 p-1 rounded-full flex-shrink-0"><Check size={8} className="text-green-600" /></div>
               <div className="leading-none">
-                  <p className="text-[10px] font-bold text-gray-800 mb-0.5">{popup.name}</p>
-                  <p className="text-[9px] text-gray-500">comprou o Chá Seca Barriga</p>
+                  <p className="text-[9px] font-bold text-gray-800 mb-0.5">{popup.name}</p>
+                  <p className="text-[8px] text-gray-500">comprou o Chá Seca Barriga</p>
               </div>
           </div>
       </div>
