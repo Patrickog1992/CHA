@@ -9,6 +9,7 @@ interface SalesPageProps {
 
 export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQ6DSA";
   
   // Timer State
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
@@ -24,6 +25,10 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
     const m = Math.floor(seconds / 60);
     const s = seconds % 60;
     return `${m}:${s < 10 ? '0' : ''}${s}`;
+  };
+
+  const handleCheckout = () => {
+    window.location.href = CHECKOUT_URL;
   };
 
   // Popup State
@@ -316,7 +321,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
              <p className="text-xl line-through text-gray-400 font-bold">De R$ 497,00</p>
              <div className="text-4xl font-black text-brand-green">✅ Por apenas R$ 37,00</div>
              
-             <Button fullWidth variant="primary" className="text-xl py-6 animate-pulse shadow-xl uppercase">
+             <Button fullWidth variant="primary" onClick={handleCheckout} className="text-xl py-6 animate-pulse shadow-xl uppercase">
                 QUERO O CHÁ SECA BARRIGA 21D AGORA!
              </Button>
 
@@ -381,7 +386,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
             <p className="text-sm text-gray-600">Seguindo uma rotina simples, prática e acessível, focada em organização, bem-estar e constância.</p>
          </div>
 
-         <Button fullWidth variant="primary" className="text-xl py-6 shadow-xl animate-pulse">
+         <Button fullWidth variant="primary" onClick={handleCheckout} className="text-xl py-6 shadow-xl animate-pulse">
             QUERO AGORA !
          </Button>
       </div>
