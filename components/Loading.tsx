@@ -15,7 +15,7 @@ export const Loading: React.FC<LoadingProps> = ({ onFinished }) => {
     "Calculando necessidades calóricas...",
     "Identificando bloqueios de emagrecimento...",
     "Selecionando a combinação ideal de chás...",
-    "Personalizando seu Chá Seca Barriga 21D...",
+    "Personalizando seu Método CARNAVAL BARRIGA SECA...",
     "Finalizando seu plano exclusivo..."
   ];
 

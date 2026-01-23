@@ -113,7 +113,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
               <div className="bg-green-100 p-1 rounded-full flex-shrink-0"><Check size={8} className="text-green-600" /></div>
               <div className="leading-none">
                   <p className="text-[9px] font-bold text-gray-800 mb-0.5">{popup.name}</p>
-                  <p className="text-[8px] text-gray-500">comprou o Chá Seca Barriga</p>
+                  <p className="text-[8px] text-gray-500">comprou o Método CARNAVAL BARRIGA SECA</p>
               </div>
           </div>
       </div>
@@ -137,7 +137,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
                 </div>
             </div>
             <div className="space-y-2">
-                <div className="bg-green-600 text-white text-center font-bold py-1 rounded-t-lg text-sm">DEPOIS DO CHÁ</div>
+                <div className="bg-green-600 text-white text-center font-bold py-1 rounded-t-lg text-sm">DEPOIS DO MÉTODO</div>
                 <img src="https://i.imgur.com/ZODa9px.jpg" alt="Depois" className="w-full h-64 object-cover rounded-b-lg shadow-md" />
                  <div className="space-y-1 mt-2">
                     <div className="flex items-center text-xs text-green-700 font-bold"><Check size={14} className="mr-1"/> Barriga Chapada</div>
@@ -150,7 +150,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
 
         <div className="bg-green-50 p-4 rounded-xl border-l-4 border-brand-green">
             <p className="text-sm font-medium">
-                <span className="font-bold text-brand-darkGreen">94% das pessoas</span> com perfis semelhantes ao seu percebem resultados em apenas 2 semanas com o CHÁ SECA BARRIGA 21D
+                <span className="font-bold text-brand-darkGreen">94% das pessoas</span> com perfis semelhantes ao seu percebem resultados em apenas 2 semanas com o Método CARNAVAL BARRIGA SECA
             </p>
         </div>
 
@@ -264,7 +264,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
       {/* Journey Timeline */}
       <div className="bg-gray-900 text-white py-8 px-4">
         <div className="max-w-md mx-auto space-y-8">
-            <h2 className="text-xl font-bold text-center text-brand-green uppercase">🚀 SUA JORNADA COM O CHÁ SECA BARRIGA 21D</h2>
+            <h2 className="text-xl font-bold text-center text-brand-green uppercase">🚀 SUA JORNADA COM O Método CARNAVAL BARRIGA SECA</h2>
             
             <div className="space-y-6 relative border-l-2 border-brand-green ml-4 pl-6">
                 <div className="relative">
@@ -291,7 +291,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
         <div className="text-center">
             <h2 className="text-2xl font-black text-brand-darkGreen uppercase">🎁 GANHE 5 BÔNUS EXCLUSIVOS</h2>
             <div className="inline-block bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-full mt-2 animate-pulse">⏰ Últimas 4 vagas restantes hoje</div>
-            <p className="text-sm text-gray-600 mt-2">Ao garantir hoje o Chá Seca Barriga 21D, você recebe gratuitamente os bônus abaixo para potencializar seus resultados e manter constância.</p>
+            <p className="text-sm text-gray-600 mt-2">Ao garantir hoje o Método CARNAVAL BARRIGA SECA, você recebe gratuitamente os bônus abaixo para potencializar seus resultados e manter constância.</p>
         </div>
 
         {[
@@ -299,7 +299,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
             { title: "BÔNUS 2: Rotina de Foco e Disciplina Diária", desc: "Estratégias simples para melhorar organização, consistência e reduzir a procrastinação no dia a dia.", val: "R$ 67,00" },
             { title: "BÔNUS 3: Método Equilíbrio Alimentar", desc: "Práticas para ajudar a reduzir exageros, melhorar consciência alimentar e controlar impulsos de forma saudável.", val: "R$ 87,00" },
             { title: "BÔNUS 4: Aula Especial – Hábitos que Aceleram Resultados", desc: "Aprenda a identificar comportamentos que podem estar atrasando seus resultados e como ajustá-los de forma prática.", val: "R$ 127,00" },
-            { title: "BÔNUS 5: Comunidade Exclusiva Chá Seca Barriga 21D", desc: "Acesso a um grupo fechado para troca de experiências, motivação e acompanhamento da jornada.", val: "R$ 97,00" },
+            { title: "BÔNUS 5: Comunidade Exclusiva Método CARNAVAL BARRIGA SECA", desc: "Acesso a um grupo fechado para troca de experiências, motivação e acompanhamento da jornada.", val: "R$ 97,00" },
         ].map((bonus, i) => (
             <div key={i} className="bg-white border-2 border-dashed border-brand-green/30 p-4 rounded-xl">
                 <h3 className="font-bold text-brand-darkGreen">{bonus.title}</h3>
@@ -322,7 +322,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
              <div className="text-4xl font-black text-brand-green">✅ Por apenas R$ 37,00</div>
              
              <Button fullWidth variant="primary" onClick={handleCheckout} className="text-xl py-6 animate-pulse shadow-xl uppercase">
-                QUERO O CHÁ SECA BARRIGA 21D AGORA!
+                QUERO O MÉTODO CARNAVAL BARRIGA SECA AGORA!
              </Button>
 
              <div className="flex items-center justify-center space-x-2 text-xs text-gray-600">
@@ -338,7 +338,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
       <div className="max-w-md mx-auto px-4 py-10 space-y-6 text-center">
          <ShieldCheck size={64} className="mx-auto text-brand-green" />
          <h2 className="text-2xl font-black text-gray-800">🛡️ GARANTIA TOTAL — RISCO ZERO</h2>
-         <p className="text-gray-600">Você tem 30 dias completos para testar o Chá Seca Barriga 21D e aplicar a rotina no seu dia a dia.</p>
+         <p className="text-gray-600">Você tem 30 dias completos para testar o Método CARNAVAL BARRIGA SECA e aplicar a rotina no seu dia a dia.</p>
          <p className="text-gray-600">Se, por qualquer motivo, você não perceber mais organização na sua rotina, sensação de leveza, melhora no bem-estar ou satisfação com sua experiência, basta enviar um e-mail ou mensagem — e devolvemos 100% do seu dinheiro.</p>
          <p className="font-bold text-gray-800">Sem perguntas. Sem burocracia.</p>
       </div>
@@ -364,7 +364,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
 
                 <div className="bg-brand-light p-6 rounded-xl border-2 border-brand-green transform scale-105 shadow-xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 bg-brand-gold text-xs font-bold px-2 py-1 text-gray-900">MELHOR OPÇÃO</div>
-                    <div className="font-bold text-xl text-brand-darkGreen">🍵 Chá Seca Barriga 21D</div>
+                    <div className="font-bold text-xl text-brand-darkGreen">🍵 Método CARNAVAL BARRIGA SECA</div>
                     <div className="text-sm text-gray-600 my-2">Pagamento único • Sem mensalidades</div>
                     <div className="font-black text-2xl text-brand-green">Apenas R$ 37,00</div>
                 </div>
@@ -382,7 +382,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
          </div>
          
          <div className="p-4 bg-green-50 rounded-xl border border-brand-green">
-            <h3 className="font-bold text-brand-green">✅ 2. Começar hoje com o Chá Seca Barriga 21D</h3>
+            <h3 className="font-bold text-brand-green">✅ 2. Começar hoje com o Método CARNAVAL BARRIGA SECA</h3>
             <p className="text-sm text-gray-600">Seguindo uma rotina simples, prática e acessível, focada em organização, bem-estar e constância.</p>
          </div>
 
@@ -419,7 +419,7 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
       </div>
 
       <footer className="bg-gray-100 py-8 text-center text-xs text-gray-400">
-        <p>© 2024 Chá Seca Barriga 21D. Todos os direitos reservados.</p>
+        <p>© 2024 Método CARNAVAL BARRIGA SECA. Todos os direitos reservados.</p>
         <p className="mt-2">Este site não faz parte do site do Facebook ou Facebook Inc.<br/>Além disso, este site NÃO é endossado pelo Facebook de forma alguma.</p>
       </footer>
 
