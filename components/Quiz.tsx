@@ -75,7 +75,7 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
         return (
           <div className="text-center space-y-6">
             <h1 className="text-2xl md:text-3xl font-extrabold text-brand-darkGreen uppercase leading-tight">
-              EMAGREÇA ATÉ O CARNAVAL COM O Método CARNAVAL BARRIGA SECA SIMPLES, NATURAL E SEM SOFRIMENTO
+              EMAGREÇA ATÉ O CARNAVAL COM O Método CARNAVAL BARRIGA SECA.... SIMPLES, NATURAL E SEM SOFRIMENTO
             </h1>
             <img 
               src="https://i.imgur.com/MDZ2waE.jpeg" 
