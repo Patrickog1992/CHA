@@ -284,7 +284,7 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
           <div className="space-y-6 text-center">
             <h2 className="text-xl font-bold text-brand-darkGreen">Suas respostas são parecidas com as delas...</h2>
             <p>Isso significa que você também pode se beneficiar do nosso Método CARNAVAL BARRIGA SECA , assim como milhares de mulheres que já transformaram suas vidas.</p>
-            <img src="https://i.imgur.com/4Aomibz.jpeg" alt="Depoimentos" className="w-full rounded-2xl shadow-lg" />
+            <img src="https://i.imgur.com/srzO0YE.jpeg" alt="Depoimentos" className="w-full rounded-2xl shadow-lg" />
             <Button fullWidth onClick={nextStep}>EU TAMBÉM QUERO</Button>
           </div>
          );
@@ -316,7 +316,7 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
            <div className="space-y-6 text-center">
              <h2 className="text-xl font-bold text-brand-darkGreen">Te entendemos!</h2>
              <p className="text-lg">Método CARNAVAL BARRIGA SECA age enquanto você dorme, queimando gordura de forma acelerada!</p>
-             <img src="https://i.imgur.com/BV4smNJ.jpeg" alt="Sono Reparador" className="w-full rounded-2xl shadow-lg" />
+             <img src="https://i.imgur.com/k2s0Itz.jpeg" alt="Sono Reparador" className="w-full rounded-2xl shadow-lg" />
              <Button fullWidth onClick={nextStep}>Continuar</Button>
            </div>
         );
@@ -383,9 +383,15 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
                <input 
                 type="number" 
                 placeholder="Ex: 75.5"
+                max="150"
                 className="w-full p-4 border-2 border-gray-300 rounded-xl focus:border-brand-green focus:outline-none text-2xl text-center font-bold"
                 value={answers.currentWeight}
-                onChange={(e) => updateAnswer('currentWeight', e.target.value)}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (val === '' || parseFloat(val) <= 150) {
+                    updateAnswer('currentWeight', val);
+                  }
+                }}
                />
                <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-gray-400 font-bold">KG</span>
              </div>
@@ -403,9 +409,15 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
                <input 
                 type="number" 
                 placeholder="Ex: 165"
+                max="180"
                 className="w-full p-4 border-2 border-gray-300 rounded-xl focus:border-brand-green focus:outline-none text-2xl text-center font-bold"
                 value={answers.height}
-                onChange={(e) => updateAnswer('height', e.target.value)}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (val === '' || parseFloat(val) <= 180) {
+                    updateAnswer('height', val);
+                  }
+                }}
                />
                <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-gray-400 font-bold">CM</span>
              </div>
@@ -422,10 +434,16 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
              <div className="relative">
                <input 
                 type="number" 
-                placeholder="Ex: 60"
+                placeholder="Ex: 48"
+                max="50"
                 className="w-full p-4 border-2 border-gray-300 rounded-xl focus:border-brand-green focus:outline-none text-2xl text-center font-bold"
                 value={answers.desiredWeight}
-                onChange={(e) => updateAnswer('desiredWeight', e.target.value)}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (val === '' || parseFloat(val) <= 50) {
+                    updateAnswer('desiredWeight', val);
+                  }
+                }}
                />
                <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-gray-400 font-bold">KG</span>
              </div>

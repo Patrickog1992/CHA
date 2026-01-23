@@ -9,7 +9,7 @@ interface SalesPageProps {
 
 export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQ6DSA";
+  const CHECKOUT_URL = "https://go.perfectpay.com.br/PPU38CQ6GGH";
   
   // Timer State
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
