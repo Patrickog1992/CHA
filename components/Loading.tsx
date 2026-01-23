@@ -25,6 +25,21 @@ export const Loading: React.FC<LoadingProps> = ({ onFinished }) => {
     { name: "Fernanda Souza", text: "Finalmente algo natural que funciona de verdade. Estou amando.", stars: 5 }
   ];
 
+  // Preload Sales Page images during loading
+  useEffect(() => {
+    const imagesToPreload = [
+      "https://i.imgur.com/CJxusNE.jpg", // Sales page before
+      "https://i.imgur.com/ZODa9px.jpg", // Sales page after
+      "https://i.imgur.com/ipOh27y.jpg", // Carousel
+      "https://i.imgur.com/AJCfcXk.jpg", // Carousel
+      "https://i.imgur.com/TAUXKtX.jpg"  // Carousel
+    ];
+    imagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress(prev => {

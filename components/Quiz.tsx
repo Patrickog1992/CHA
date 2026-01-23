@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Answers } from '../types';
 import { Button } from './ui/Button';
 import { ArrowRight, Check, Star, AlertTriangle, ChevronRight } from 'lucide-react';
@@ -22,6 +22,21 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
     setStep(prev => prev + 1);
     scrollToTop();
   };
+
+  // Preload images for future steps
+  useEffect(() => {
+    const imagesToPreload = [
+      "https://i.imgur.com/BTYdqvQ.jpg", // Step 6 - Jessica
+      "https://i.imgur.com/srzO0YE.jpeg", // Step 12 - Social Proof
+      "https://i.imgur.com/k2s0Itz.jpeg", // Step 14 - Sleep
+      "https://i.imgur.com/ipOh27y.jpg"  // Step 16 - Story
+    ];
+
+    imagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const updateAnswer = (key: keyof Answers, value: any) => {
     setAnswers(prev => ({ ...prev, [key]: value }));
@@ -60,13 +75,14 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
         return (
           <div className="text-center space-y-6">
             <h1 className="text-2xl md:text-3xl font-extrabold text-brand-darkGreen uppercase leading-tight">
-              EMAGREÇA EM ATÉ 21 DIAS COM O Método CARNAVAL BARRIGA SECA SIMPLES, NATURAL E SEM SOFRIMENTO
+              EMAGREÇA ATÉ O CARNAVAL COM O Método CARNAVAL BARRIGA SECA SIMPLES, NATURAL E SEM SOFRIMENTO
             </h1>
             <img 
               src="https://i.imgur.com/MDZ2waE.jpeg" 
               alt="Método CARNAVAL BARRIGA SECA" 
               className="w-full rounded-2xl shadow-lg"
               fetchPriority="high"
+              decoding="async"
             />
             <div className="bg-red-50 border border-brand-red p-4 rounded-xl text-brand-red font-semibold text-sm">
               Atenção: oferecemos apenas uma consulta por pessoa. Se você sair, perderá a sua vez. Aproveite essa oportunidade exclusiva!
@@ -173,7 +189,13 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
           <div className="space-y-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-xl font-bold text-center text-brand-darkGreen">Veja o Resultado do Método CARNAVAL BARRIGA SECA na vida da Jéssica</h2>
             <p className="text-gray-700">Com dificuldades para emagrecer e muita ansiedade, Jéssica incluiu os chás bariátricos em sua rotina noturna. Em apenas três semanas, perdeu 9 kg, melhorando sua autoestima e vida.</p>
-            <img src="https://i.imgur.com/BTYdqvQ.jpg" alt="Jessica Antes e Depois" className="w-full rounded-xl" />
+            <img 
+              src="https://i.imgur.com/BTYdqvQ.jpg" 
+              alt="Jessica Antes e Depois" 
+              className="w-full rounded-xl" 
+              decoding="async"
+              loading="eager"
+            />
             
             <div className="bg-gray-50 p-4 rounded-xl border border-gray-200">
               <div className="flex text-yellow-400 mb-2">
@@ -284,7 +306,13 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
           <div className="space-y-6 text-center">
             <h2 className="text-xl font-bold text-brand-darkGreen">Suas respostas são parecidas com as delas...</h2>
             <p>Isso significa que você também pode se beneficiar do nosso Método CARNAVAL BARRIGA SECA , assim como milhares de mulheres que já transformaram suas vidas.</p>
-            <img src="https://i.imgur.com/srzO0YE.jpeg" alt="Depoimentos" className="w-full rounded-2xl shadow-lg" />
+            <img 
+              src="https://i.imgur.com/srzO0YE.jpeg" 
+              alt="Depoimentos" 
+              className="w-full rounded-2xl shadow-lg"
+              decoding="async"
+              loading="eager"
+            />
             <Button fullWidth onClick={nextStep}>EU TAMBÉM QUERO</Button>
           </div>
          );
@@ -316,7 +344,13 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
            <div className="space-y-6 text-center">
              <h2 className="text-xl font-bold text-brand-darkGreen">Te entendemos!</h2>
              <p className="text-lg">Método CARNAVAL BARRIGA SECA age enquanto você dorme, queimando gordura de forma acelerada!</p>
-             <img src="https://i.imgur.com/k2s0Itz.jpeg" alt="Sono Reparador" className="w-full rounded-2xl shadow-lg" />
+             <img 
+              src="https://i.imgur.com/k2s0Itz.jpeg" 
+              alt="Sono Reparador" 
+              className="w-full rounded-2xl shadow-lg"
+              decoding="async"
+              loading="eager"
+            />
              <Button fullWidth onClick={nextStep}>Continuar</Button>
            </div>
         );
@@ -355,7 +389,13 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
              <h2 className="text-xl font-bold text-center text-brand-darkGreen">Histórias Reais de Transformação!</h2>
              
              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
-                <img src="https://i.imgur.com/ipOh27y.jpg" className="w-full rounded-xl mb-4 shadow-sm" alt="Transformação Real" />
+                <img 
+                  src="https://i.imgur.com/ipOh27y.jpg" 
+                  className="w-full rounded-xl mb-4 shadow-sm" 
+                  alt="Transformação Real" 
+                  decoding="async"
+                  loading="eager"
+                />
                 
                 <div className="flex justify-center text-yellow-400 mb-4">
                    {[1,2,3,4,5].map(i => <Star key={i} fill="currentColor" size={24} />)}
@@ -383,12 +423,12 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
                <input 
                 type="number" 
                 placeholder="Ex: 75.5"
-                max="150"
+                max="200"
                 className="w-full p-4 border-2 border-gray-300 rounded-xl focus:border-brand-green focus:outline-none text-2xl text-center font-bold"
                 value={answers.currentWeight}
                 onChange={(e) => {
                   const val = e.target.value;
-                  if (val === '' || parseFloat(val) <= 150) {
+                  if (val === '' || parseFloat(val) <= 200) {
                     updateAnswer('currentWeight', val);
                   }
                 }}
@@ -409,12 +449,12 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
                <input 
                 type="number" 
                 placeholder="Ex: 165"
-                max="180"
+                max="200"
                 className="w-full p-4 border-2 border-gray-300 rounded-xl focus:border-brand-green focus:outline-none text-2xl text-center font-bold"
                 value={answers.height}
                 onChange={(e) => {
                   const val = e.target.value;
-                  if (val === '' || parseFloat(val) <= 180) {
+                  if (val === '' || parseFloat(val) <= 200) {
                     updateAnswer('height', val);
                   }
                 }}
@@ -435,12 +475,12 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
                <input 
                 type="number" 
                 placeholder="Ex: 48"
-                max="50"
+                max="200"
                 className="w-full p-4 border-2 border-gray-300 rounded-xl focus:border-brand-green focus:outline-none text-2xl text-center font-bold"
                 value={answers.desiredWeight}
                 onChange={(e) => {
                   const val = e.target.value;
-                  if (val === '' || parseFloat(val) <= 50) {
+                  if (val === '' || parseFloat(val) <= 200) {
                     updateAnswer('desiredWeight', val);
                   }
                 }}
