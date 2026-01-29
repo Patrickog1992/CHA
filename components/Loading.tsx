@@ -15,7 +15,7 @@ export const Loading: React.FC<LoadingProps> = ({ onFinished }) => {
     "Calculando necessidades calóricas...",
     "Identificando bloqueios de emagrecimento...",
     "Selecionando a combinação ideal de chás...",
-    "Personalizando seu Método CARNAVAL BARRIGA SECA...",
+    "Personalizando seu Chá Seca Barriga 21D...",
     "Finalizando seu plano exclusivo..."
   ];
 
@@ -24,21 +24,6 @@ export const Loading: React.FC<LoadingProps> = ({ onFinished }) => {
     { name: "Patrícia Lima", text: "Meu inchaço sumiu em 3 dias. Recomendo muito!", stars: 5 },
     { name: "Fernanda Souza", text: "Finalmente algo natural que funciona de verdade. Estou amando.", stars: 5 }
   ];
-
-  // Preload Sales Page images during loading
-  useEffect(() => {
-    const imagesToPreload = [
-      "https://i.imgur.com/CJxusNE.jpg", // Sales page before
-      "https://i.imgur.com/ZODa9px.jpg", // Sales page after
-      "https://i.imgur.com/ipOh27y.jpg", // Carousel
-      "https://i.imgur.com/AJCfcXk.jpg", // Carousel
-      "https://i.imgur.com/TAUXKtX.jpg"  // Carousel
-    ];
-    imagesToPreload.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

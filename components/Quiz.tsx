@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Answers } from '../types';
 import { Button } from './ui/Button';
 import { ArrowRight, Check, Star, AlertTriangle, ChevronRight } from 'lucide-react';
@@ -22,21 +22,6 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
     setStep(prev => prev + 1);
     scrollToTop();
   };
-
-  // Preload images for future steps
-  useEffect(() => {
-    const imagesToPreload = [
-      "https://i.imgur.com/BTYdqvQ.jpg", // Step 6 - Jessica
-      "https://i.imgur.com/srzO0YE.jpeg", // Step 12 - Social Proof
-      "https://i.imgur.com/k2s0Itz.jpeg", // Step 14 - Sleep
-      "https://i.imgur.com/ipOh27y.jpg"  // Step 16 - Story
-    ];
-
-    imagesToPreload.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
 
   const updateAnswer = (key: keyof Answers, value: any) => {
     setAnswers(prev => ({ ...prev, [key]: value }));
@@ -75,17 +60,16 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
         return (
           <div className="text-center space-y-6">
             <h1 className="text-2xl md:text-3xl font-extrabold text-brand-darkGreen uppercase leading-tight">
-              EMAGREÇA ATÉ O CARNAVAL COM O Método CARNAVAL BARRIGA SECA.... SIMPLES, NATURAL E SEM SOFRIMENTO
+              EMAGREÇA EM ATÉ 21 DIAS COM O CHÁ SECA BARRIGA 21D SIMPLES, NATURAL E SEM SOFRIMENTO
             </h1>
             <img 
-              src="https://i.imgur.com/MDZ2waE.jpeg" 
-              alt="Método CARNAVAL BARRIGA SECA" 
+              src="https://i.imgur.com/e4WB1VN.jpeg" 
+              alt="Chá Seca Barriga" 
               className="w-full rounded-2xl shadow-lg"
               fetchPriority="high"
-              decoding="async"
             />
             <div className="bg-red-50 border border-brand-red p-4 rounded-xl text-brand-red font-semibold text-sm">
-              Atenção: oferecemos apenas uma consulta por pessoa. Se você sair, perderá a sua vez. Aproveite essa oportunidade exclusiva!
+              Atenção: essa receita está disponível por tempo limitado. Ao sair desta página, você pode perder o acesso ao Chá Seca Barriga 21D.
             </div>
             <Button fullWidth onClick={nextStep} className="animate-pulse">
               FAÇA O TESTE GRATUITO
@@ -187,21 +171,15 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
       case 6: // Jessica Testimonial
         return (
           <div className="space-y-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <h2 className="text-xl font-bold text-center text-brand-darkGreen">Veja o Resultado do Método CARNAVAL BARRIGA SECA na vida da Jéssica</h2>
+            <h2 className="text-xl font-bold text-center text-brand-darkGreen">Veja o Resultado dos CHÁ SECA BARRIGA 21D na vida da Jéssica</h2>
             <p className="text-gray-700">Com dificuldades para emagrecer e muita ansiedade, Jéssica incluiu os chás bariátricos em sua rotina noturna. Em apenas três semanas, perdeu 9 kg, melhorando sua autoestima e vida.</p>
-            <img 
-              src="https://i.imgur.com/BTYdqvQ.jpg" 
-              alt="Jessica Antes e Depois" 
-              className="w-full rounded-xl" 
-              decoding="async"
-              loading="eager"
-            />
+            <img src="https://i.imgur.com/BTYdqvQ.jpg" alt="Jessica Antes e Depois" className="w-full rounded-xl" />
             
             <div className="bg-gray-50 p-4 rounded-xl border border-gray-200">
               <div className="flex text-yellow-400 mb-2">
                 {[1,2,3,4,5].map(i => <Star key={i} fill="currentColor" size={20} />)}
               </div>
-              <p className="text-sm italic text-gray-600">"Eu já tinha tentado de tudo, mas nada funcionava. O Método CARNAVAL BARRIGA SECA mudou minha vida! Em menos de um mês eu recuperei roupas que não serviam há anos. Recomendo demais!"</p>
+              <p className="text-sm italic text-gray-600">"Eu já tinha tentado de tudo, mas nada funcionava. O Chá Seca Barriga mudou minha vida! Em menos de um mês eu recuperei roupas que não serviam há anos. Recomendo demais!"</p>
               <p className="text-xs font-bold mt-2 text-gray-900">- Jéssica S.</p>
             </div>
 
@@ -305,14 +283,8 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
          return (
           <div className="space-y-6 text-center">
             <h2 className="text-xl font-bold text-brand-darkGreen">Suas respostas são parecidas com as delas...</h2>
-            <p>Isso significa que você também pode se beneficiar do nosso Método CARNAVAL BARRIGA SECA , assim como milhares de mulheres que já transformaram suas vidas.</p>
-            <img 
-              src="https://i.imgur.com/srzO0YE.jpeg" 
-              alt="Depoimentos" 
-              className="w-full rounded-2xl shadow-lg"
-              decoding="async"
-              loading="eager"
-            />
+            <p>Isso significa que você também pode se beneficiar da nossa CHÁ SECA BARRIGA 21D , assim como milhares de mulheres que já transformaram suas vidas.</p>
+            <img src="https://i.imgur.com/4Aomibz.jpeg" alt="Depoimentos" className="w-full rounded-2xl shadow-lg" />
             <Button fullWidth onClick={nextStep}>EU TAMBÉM QUERO</Button>
           </div>
          );
@@ -343,14 +315,8 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
         return (
            <div className="space-y-6 text-center">
              <h2 className="text-xl font-bold text-brand-darkGreen">Te entendemos!</h2>
-             <p className="text-lg">Método CARNAVAL BARRIGA SECA age enquanto você dorme, queimando gordura de forma acelerada!</p>
-             <img 
-              src="https://i.imgur.com/k2s0Itz.jpeg" 
-              alt="Sono Reparador" 
-              className="w-full rounded-2xl shadow-lg"
-              decoding="async"
-              loading="eager"
-            />
+             <p className="text-lg">CHÁ SECA BARRIGA 21D age enquanto você dorme, queimando gordura de forma acelerada!</p>
+             <img src="https://i.imgur.com/BV4smNJ.jpeg" alt="Sono Reparador" className="w-full rounded-2xl shadow-lg" />
              <Button fullWidth onClick={nextStep}>Continuar</Button>
            </div>
         );
@@ -389,13 +355,7 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
              <h2 className="text-xl font-bold text-center text-brand-darkGreen">Histórias Reais de Transformação!</h2>
              
              <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
-                <img 
-                  src="https://i.imgur.com/ipOh27y.jpg" 
-                  className="w-full rounded-xl mb-4 shadow-sm" 
-                  alt="Transformação Real" 
-                  decoding="async"
-                  loading="eager"
-                />
+                <img src="https://i.imgur.com/ipOh27y.jpg" className="w-full rounded-xl mb-4 shadow-sm" alt="Transformação Real" />
                 
                 <div className="flex justify-center text-yellow-400 mb-4">
                    {[1,2,3,4,5].map(i => <Star key={i} fill="currentColor" size={24} />)}
@@ -542,7 +502,7 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
                  <p className="text-sm text-brand-green">A combinação ideal de ingredientes pode ativar seu metabolismo, reduzir a retenção de líquidos e aumentar sua disposição.</p>
               </div>
 
-              <h3 className="font-bold text-lg text-center text-brand-darkGreen">🔽 Descubra agora como o Método CARNAVAL BARRIGA SECA pode transformar seu corpo!</h3>
+              <h3 className="font-bold text-lg text-center text-brand-darkGreen">🔽 Descubra agora como o Chá SECA BARRIGA 21D pode transformar seu corpo!</h3>
               <p className="text-center font-semibold">Você pode perder de 9KG a 15KG em 3 semanas com os Chás ideais!</p>
 
               {/* GRAPH */}
@@ -625,12 +585,12 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
              <p className="text-center text-gray-600">Suas preferências alimentares também ajudam no processo!<br/>Escolha quantas quiser</p>
              <div className="grid grid-cols-2 gap-4">
               {[
-                { name: "Limão", icon: "🍋" },
-                { name: "Laranja", icon: "🍊" },
-                { name: "Banana", icon: "🍌" },
-                { name: "Maçã", icon: "🍎" },
-                { name: "Morango", icon: "🍓" },
-                { name: "Abacaxi", icon: "🍍" }
+                { name: "Melancia", icon: "🍉" },
+                { name: "Uva", icon: "🍇" },
+                { name: "Abacate", icon: "🥑" },
+                { name: "Kiwi", icon: "🥝" },
+                { name: "Pêssego", icon: "🍑" },
+                { name: "Manga", icon: "🥭" }
               ].map(opt => (
                 <div key={opt.name} 
                   onClick={() => handleMultiSelect('fruits', opt.name)}
@@ -654,7 +614,7 @@ export const Quiz: React.FC<QuizProps> = ({ answers, setAnswers, onComplete }) =
   return (
     <div className="min-h-screen py-8 px-4 max-w-md mx-auto relative" ref={topRef}>
       <div className="flex justify-center mb-6">
-        <img src="https://i.imgur.com/ajGmcSY.png" alt="Logo" className="w-[100px] h-[100px] object-contain" />
+        <img src="https://i.imgur.com/2VNjo2Q.png" alt="Logo" className="w-[100px] h-[100px] object-contain" />
       </div>
 
       {/* Progress Bar - Now Static/In-flow */}
