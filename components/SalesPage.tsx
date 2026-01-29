@@ -253,6 +253,25 @@ export const SalesPage: React.FC<SalesPageProps> = ({ answers }) => {
            </div>
       </div>
 
+      {/* Jessica Video Testimonial */}
+      <div className="max-w-md mx-auto px-4 py-8 space-y-4">
+        <h2 className="text-2xl font-black text-center text-brand-darkGreen">
+          Veja o que Jéssica Andrade falou dos Chás
+        </h2>
+        <div className="rounded-xl overflow-hidden shadow-lg border-2 border-brand-green/20 bg-black">
+          <video
+            controls
+            playsInline
+            poster="https://i.imgur.com/jdd4ggJ.jpeg"
+            className="w-full aspect-video object-contain"
+            preload="metadata"
+          >
+            <source src="https://i.imgur.com/7zIUnhf.mp4" type="video/mp4" />
+            Seu navegador não suporta a reprodução de vídeos.
+          </video>
+        </div>
+      </div>
+
       {/* Value Proposition */}
       <div className="max-w-md mx-auto px-4 py-8 space-y-6 text-center">
         <h2 className="text-2xl font-black text-brand-darkGreen uppercase">E O MELHOR?</h2>
